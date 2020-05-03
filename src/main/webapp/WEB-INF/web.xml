@@ -1,0 +1,58 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://java.sun.com/xml/ns/persistence"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+  <welcome-file-list>
+    <welcome-file>/view/index.jsp</welcome-file>
+  </welcome-file-list>
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+    <filter-name>add_filter</filter-name>
+    <filter-class>filters.AddFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>add_filter</filter-name>
+    <url-pattern>/view/add.jsp</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>list_filter</filter-name>
+    <filter-class>filters.ListFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>list_filter</filter-name>
+    <url-pattern>/view/list.jsp</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>room_filter</filter-name>
+    <filter-class>filters.RoomFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>room_filter</filter-name>
+    <url-pattern>/view/room.jsp</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+  <servlet-name>add_servlet</servlet-name>
+  <servlet-class>servlets.AddServlet</servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>add_servlet</servlet-name>
+    <url-pattern>/view/add</url-pattern>
+  </servlet-mapping>
+
+<!--  <servlet>-->
+<!--    <servlet-name>ip_servlet</servlet-name>-->
+<!--    <servlet-class>servlets.IPServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>ip_servlet</servlet-name>-->
+<!--    <url-pattern>/view/index</url-pattern>-->
+<!--  </servlet-mapping>-->
+</web-app>
+
+

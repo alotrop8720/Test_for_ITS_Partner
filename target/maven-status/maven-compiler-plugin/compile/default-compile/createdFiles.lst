@@ -1,0 +1,5 @@
+base_classes\ManagerRooms.class
+base_classes\Room.class
+filters\AddFilter.class
+servlets\AddServlet.class
+filters\ListFilter.class
