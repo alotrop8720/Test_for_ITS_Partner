@@ -3,23 +3,41 @@
 <head>
     <title>Room</title>
 </head>
-<body onload="changeBackground();">
+<body id="myBody">
+    <p>Number: ${num}</p>
     <p>Room: ${name}</p>
-    <button onclick="turnLight()">turn</button>
+    <p>Country: ${country}</p>
+    <button value="${light}" onclick="changeLightStateOnServer()">turn</button>
+    <p id="turn"></p>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-        var light = ${light};
-        function turnLight() {
-            light = !light;
-            changeBackground();
+        function changeLightStateOnServer(){
+            $.ajax({
+                "type": "GET",
+                "url": "/view/room",
+                "data": {num : ${num}}
+            })
         }
-        function changeBackground() {
-            if (light)
-                document.body.style.background = "#FFD700";
-            else
-                document.body.style.background = "#5F9EA0";
+
+        function setLightStateOnClient(){
+            $.ajax({
+                "type": "POST",
+                "url": "/view/room",
+                "data": {num : ${num}},
+                "dataType": "json",
+                "success": function(data) {
+                    document.getElementById("turn").innerText = "turn " + data.light;
+                },
+                "error": function(errorData) {
+                    console.log("lookup ajax error");
+                    console.log(errorData);
+                }
+            })
         }
+
+        setInterval(setLightStateOnClient, 1000);
     </script>
+
 </body>
 </html>

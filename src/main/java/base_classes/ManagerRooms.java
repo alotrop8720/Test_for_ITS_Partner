@@ -13,6 +13,10 @@ public class ManagerRooms implements Serializable {
     private static int count = 0;
     private Map<Integer, Room> rooms = new HashMap<>();
 
+    public Map<Integer, Room> getRooms() {
+        return rooms;
+    }
+
     public ManagerRooms() {
         deserialization();
     }
@@ -49,6 +53,8 @@ public class ManagerRooms implements Serializable {
             }
         }
     }
+
+
 
 
     public List<Room> getListRoom(){

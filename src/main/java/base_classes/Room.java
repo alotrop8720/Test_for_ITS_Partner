@@ -25,6 +25,10 @@ public class Room implements Serializable {
         return light;
     }
 
+    public void setLight(boolean light) {
+        this.light = light;
+    }
+
     public boolean turnLight(){
         light = !light;
         return light;

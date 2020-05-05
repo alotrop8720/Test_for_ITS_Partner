@@ -17,6 +17,6 @@ public class AddServlet extends HttpServlet {
         String country = req.getParameter("country");
         managerRooms.createRoom(name, country);
         managerRooms.serialization();
-        resp.sendRedirect(req.getContextPath() + "/view/list.jsp");
+        resp.sendRedirect(req.getContextPath() + "/view/index.jsp");
     }
 }

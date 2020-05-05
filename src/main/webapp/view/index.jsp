@@ -4,11 +4,27 @@
     <title>Main page</title>
 </head>
 <body>
-    <a href="/RoomLight/view/add.jsp" class="button">Create room</a>
-    <a  href="/RoomLight/view/list.jsp" class="button">List of rooms</a>
-<%--    <form action="/RoomLight/view/index" method="post">        --%>
-<%--        <button type="submit">take ip</button>--%>
-<%--    </form>--%>
+
+    <button onclick="goToAdd()" class="button">Create room</button>
+    <button type="submit" onclick="goToList()" class="button">List of rooms</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var d;
+
+        $.get('https://www.cloudflare.com/cdn-cgi/trace',
+            function(data) {
+                d = data;
+            })
+
+        function goToAdd() {
+            document.location.href = "/view/add.jsp?data="+ d;
+        }
+
+        function goToList() {
+            document.location.href = "/view/list.jsp?data="+ d;
+        }
+    </script>
 
 </body>
 </html>

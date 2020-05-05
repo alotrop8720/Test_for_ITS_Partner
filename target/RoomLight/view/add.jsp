@@ -23,7 +23,7 @@
 <script>
     function goToPageList()
     {
-        document.location.href = "/RoomLight/view/list.jsp";
+        document.location.href = "/view/list.jsp";
     }
 </script>
 </body>

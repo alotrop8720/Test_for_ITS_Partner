@@ -3,6 +3,7 @@ D:\StudyApp\RoomLight\src\main\java\filters\RoomFilter.java
 D:\StudyApp\RoomLight\src\main\java\base_classes\GeoIP.java
 D:\StudyApp\RoomLight\src\main\java\base_classes\ManagerRooms.java
 D:\StudyApp\RoomLight\src\main\java\base_classes\Room.java
-D:\StudyApp\RoomLight\src\main\java\servlets\IPServlet.java
+D:\StudyApp\RoomLight\src\main\java\servlets\LightServlet.java
 D:\StudyApp\RoomLight\src\main\java\filters\ListFilter.java
+D:\StudyApp\RoomLight\src\main\java\base_classes\Utils.java
 D:\StudyApp\RoomLight\src\main\java\servlets\AddServlet.java

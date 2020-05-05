@@ -9,14 +9,14 @@
     <welcome-file>/view/index.jsp</welcome-file>
   </welcome-file-list>
   <display-name>Archetype Created Web Application</display-name>
-  <filter>
-    <filter-name>add_filter</filter-name>
-    <filter-class>filters.AddFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>add_filter</filter-name>
-    <url-pattern>/view/add.jsp</url-pattern>
-  </filter-mapping>
+<!--  <filter>-->
+<!--    <filter-name>add_filter</filter-name>-->
+<!--    <filter-class>filters.AddFilter</filter-class>-->
+<!--  </filter>-->
+<!--  <filter-mapping>-->
+<!--    <filter-name>add_filter</filter-name>-->
+<!--    <url-pattern>/view/add.jsp</url-pattern>-->
+<!--  </filter-mapping>-->
 
   <filter>
     <filter-name>list_filter</filter-name>
@@ -45,14 +45,16 @@
     <url-pattern>/view/add</url-pattern>
   </servlet-mapping>
 
-<!--  <servlet>-->
-<!--    <servlet-name>ip_servlet</servlet-name>-->
-<!--    <servlet-class>servlets.IPServlet</servlet-class>-->
-<!--  </servlet>-->
-<!--  <servlet-mapping>-->
-<!--    <servlet-name>ip_servlet</servlet-name>-->
-<!--    <url-pattern>/view/index</url-pattern>-->
-<!--  </servlet-mapping>-->
+  <servlet>
+    <servlet-name>server_light_servlet</servlet-name>
+    <servlet-class>servlets.ServerLightServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>server_light_servlet</servlet-name>
+    <url-pattern>/view/room</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
 
 
