@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class ManagerRooms implements Serializable {
     private static Logger logger = Logger.getLogger(ManagerRooms.class.getName());
-    private static int count = 0;
+    private int count = 0;
     private Map<Integer, Room> rooms = new HashMap<>();
 
     public Map<Integer, Room> getRooms() {
