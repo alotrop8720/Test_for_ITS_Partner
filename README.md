@@ -1,4 +1,4 @@
-Приложение собрано на maven с сервера использованием сервера Apache Tomcat. URL:localhost:8080/viev/index.jsp
+Приложение собрано на maven с сервера использованием сервера Apache Tomcat. URL:localhost:8080/view/index.jsp
 1. War файл в папке target положить на сервер Tomcat в папку webapp. 
 2. Запустить Tomcat(bin => startup.bat).
 3. !!ОБЯЗАТЕЛЬНО!! положить файл с бд на сервер в папку bin. 
