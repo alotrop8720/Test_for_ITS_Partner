@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
+/**
+ * There are methods for interactions with base class Room.
+ */
 public class ManagerRooms implements Serializable {
     private static Logger logger = Logger.getLogger(ManagerRooms.class.getName());
     private static int count = 0;
@@ -21,10 +24,14 @@ public class ManagerRooms implements Serializable {
         deserialization();
     }
 
-    public synchronized void createRoom(String name, String country){
+    public synchronized Room createRoom(String name, String country){
         rooms.put(count++, new Room(name, country));
+        return rooms.get(count-1);
     }
 
+    /**
+     * Serialisable object reference.
+     */
     public synchronized void serialization(){
         File serFile = new File("Rooms.txt");
         try {
@@ -39,6 +46,9 @@ public class ManagerRooms implements Serializable {
         }
     }
 
+    /**
+     * Deserialisable object reference.
+     */
     @SuppressWarnings("unchecked")
     public synchronized void deserialization(){
         if (new File("Rooms.txt").exists()){
@@ -54,9 +64,10 @@ public class ManagerRooms implements Serializable {
         }
     }
 
-
-
-
+    /**
+     * Create list Room from Map
+     * @return List of base class Room
+     */
     public List<Room> getListRoom(){
         List<Room> roomList = new ArrayList<>();
         for (Room item: rooms.values()){

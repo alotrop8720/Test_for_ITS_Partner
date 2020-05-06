@@ -6,10 +6,38 @@
     <link rel="stylesheet" type="text/css" href="css/mainCss.css?2">
 </head>
 <body>
-    <c:forEach var="element" items="${rooms}" varStatus="counter">
-        <p id="${counter.index} ${element.isLight()}">${element.getName()} ${element.getCountry()}</p>
-    </c:forEach>
+    <div>
+        <c:forEach var="element" items="${rooms}" varStatus="counter">
+            <p id="${counter.index} ${element.isLight()}">${element.getName()} ${element.getCountry()}</p>
+        </c:forEach>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
+        // var d;
+        // var ipCountry;
+        // $.get('https://www.cloudflare.com/cdn-cgi/trace',
+        //     function(data) {
+        //         d = data;
+        //     })
+        //
+        // function setIPAddress(){
+        //     $.ajax({
+        //         "type": "POST",
+        //         "url": "/view/list",
+        //         "data": {data : d},
+        //         "dataType": "json",
+        //         "success": function(data) {
+        //             console.log(data.ipCountry);
+        //             ipCountry = data.ipCountry;
+        //             console.log(ipCountry);
+        //         },
+        //         "error": function(errorData) {
+        //             console.log("lookup ajax error");
+        //             console.log(errorData);
+        //         }
+        //     })
+        // }
+
         document.body.onclick = function(e) {
             el = e.target;
             var arrValue = el.innerHTML.split(" ");

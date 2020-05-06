@@ -13,24 +13,21 @@ import java.util.Map;
 public class ListFilter implements Filter {
     private List<Room> rooms;
 
-    public ListFilter() {
-        ManagerRooms managerRooms = new ManagerRooms();
-        rooms = managerRooms.getListRoom();
-    }
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        servletRequest.setCharacterEncoding("UTF-8");
-        servletRequest.setAttribute("rooms", rooms);
-        String ip = Utils.getIpAddress(servletRequest.getParameter("data"));
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
+        ManagerRooms managerRooms = new ManagerRooms();
+        rooms = managerRooms.getListRoom();
+        request.setCharacterEncoding("UTF-8");
+        request.setAttribute("rooms", rooms);
+        String ip = Utils.getIpAddress(request.getParameter("data"));
         GeoIP geoIP = new GeoIP(ip);
-        servletRequest.setAttribute("ipCountry", geoIP.getCountry());
-        filterChain.doFilter(servletRequest, servletResponse);
+        request.setAttribute("ipCountry", geoIP.getCountry());
+        filterChain.doFilter(request, response);
     }
 
     @Override

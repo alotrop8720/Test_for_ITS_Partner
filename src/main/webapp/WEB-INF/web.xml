@@ -54,6 +54,15 @@
     <url-pattern>/view/room</url-pattern>
   </servlet-mapping>
 
+<!--  <servlet>-->
+<!--    <servlet-name>list_servlet</servlet-name>-->
+<!--    <servlet-class>servlets.ServerLightServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>list_servlet</servlet-name>-->
+<!--    <url-pattern>/view/list</url-pattern>-->
+<!--  </servlet-mapping>-->
+
 
 </web-app>
 

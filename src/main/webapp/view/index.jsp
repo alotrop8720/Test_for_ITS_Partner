@@ -11,7 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
         var d;
-
         $.get('https://www.cloudflare.com/cdn-cgi/trace',
             function(data) {
                 d = data;

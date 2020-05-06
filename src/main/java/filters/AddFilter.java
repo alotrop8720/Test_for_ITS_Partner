@@ -15,6 +15,10 @@ public class AddFilter implements Filter {
     private static Logger logger = Logger.getLogger(AddFilter.class.getName());
     private static List<String> contents = new LinkedList<>();
 
+    /**
+     * Create list for combo-box from resource file, which include list of countries.
+     * @throws Exception
+     */
     public AddFilter() throws Exception{
         if (contents.size() == 0) {
             try {

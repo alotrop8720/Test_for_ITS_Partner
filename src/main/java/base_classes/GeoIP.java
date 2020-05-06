@@ -10,8 +10,13 @@ import org.apache.commons.io.IOUtils;
 import java.awt.im.InputContext;
 import java.io.*;
 import java.net.InetAddress;
+import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * There are implementation еру GEOIP2 library.
+ * Only country.
+ */
 public class GeoIP {
     private static Logger logger = Logger.getLogger(ManagerRooms.class.getName());
     private String ip;
@@ -32,11 +37,14 @@ public class GeoIP {
         }catch (GeoIp2Exception e) {
             logger.info(e.getMessage());
         }
-}
+    }
 
+    /**
+     * Get country for ip.
+     * @return name of country
+     */
     public String getCountry(){
         return response.getCountry().getName();
     }
-
 
 }

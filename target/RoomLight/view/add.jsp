@@ -6,7 +6,7 @@
 </head>
 <body>
 <div>
-    <form action="/RoomLight/view/add" method="post">
+    <form action="/view/add" method="post">
         <label for="fname">Name room</label>
         <input type="text" id="fname" name="name_room" placeholder="Name room..">
 
@@ -23,7 +23,7 @@
 <script>
     function goToPageList()
     {
-        document.location.href = "/view/list.jsp";
+        document.location.href = "/view/index.jsp";
     }
 </script>
 </body>
